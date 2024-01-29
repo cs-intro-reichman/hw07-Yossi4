@@ -4,10 +4,12 @@ public class SpellChecker {
 
 	public static void main(String[] args) {
 		String word = args[0];
-		int threshold = Integer.parseInt(args[1]);
-		String[] dictionary = readDictionary("dictionary.txt");
-		String correction = spellChecker(word, threshold, dictionary);
-		System.out.println(correction);
+		//int threshold = Integer.parseInt(args[1]);
+		//String[] dictionary = readDictionary("dictionary.txt");
+		//String correction = spellChecker(word, threshold, dictionary);
+		//System.out.println(correction);
+		String word1 = args[1];
+		System.out.println(levenshtein(word,word1));
 
 		
 	}
@@ -23,6 +25,8 @@ public class SpellChecker {
 
 	public static int levenshtein(String word1, String word2) {
 		// Your code goes here
+		word1 = word1.toLowerCase();
+		word2 = word2.toLowerCase();
 		if (word2.length() == 0) 
 		{
 			return word1.length();	
